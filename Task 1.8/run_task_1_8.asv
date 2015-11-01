@@ -34,6 +34,7 @@ d = inv(u)*n;
 d_1 = d(1);
 d_2 = d(2);
 
+5
 
 %Finding m_u
 %LOAD OR INSERT SCRIPT TO FIND M_U HERE

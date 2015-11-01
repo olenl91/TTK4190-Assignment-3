@@ -10,7 +10,7 @@ psi0=0;        %Inital yaw angle
 r0=0;          %Inital yaw rate
 c=0;           %Current on (1)/off (0)
 
-nc = 10; % the actuation of the propeller
+nc = 7; % the actuation of the propeller
 dt = 1; % how many timesteps for evaluating u dot
 
 sim('MSFartoystyring');
