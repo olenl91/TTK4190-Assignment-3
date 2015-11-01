@@ -11,7 +11,7 @@ function xdot = msfartoystyring(x,u, curr)
 % 
 % The input vector is :
 % u      = [ delta_c  n_c h]', 
-where
+%where
 % delta_c = commanded rudder angle   (rad)
 % n_c     = commanded shaft velocity (rad/s) - nominal propeller 80 rpm
 %
