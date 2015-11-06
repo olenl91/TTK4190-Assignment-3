@@ -57,3 +57,8 @@ legend('Waypoints','Spline inter.','Cubic Hermite inter.','Piece-wise inter.');
     
 %% Task 2.2
 
+
+
+
+%% Task 2.3
+
