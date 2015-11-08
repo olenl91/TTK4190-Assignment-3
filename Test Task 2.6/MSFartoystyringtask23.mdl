@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.124"
+    ComputedModelVersion    "1.125"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Truls"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 08 20:35:48 2015"
-  RTWModifiedTimeStamp	  368915747
-  ModelVersionFormat	  "1.%<AutoIncrement:124>"
+  LastModifiedDate	  "Sun Nov 08 20:42:57 2015"
+  RTWModifiedTimeStamp	  368916130
+  ModelVersionFormat	  "1.%<AutoIncrement:125>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3176,7 +3176,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Subsystem"
-	Location		[-8, -8, 2568, 1408]
+	Location		[-8, 0, 2568, 1416]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3457,17 +3457,16 @@ Model {
 	  ZOrder		  55
 	  SrcBlock		  "In2"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, 12; 710, 0; 0, -56]
+	  Points		  [5, 0; 0, 12; 710, 0; 0, -47]
 	  Branch {
-	    ZOrder		    60
-	    Points		    [0, 9]
-	    DstBlock		    "Scope1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    59
+	    ZOrder		    64
 	    DstBlock		    "Sum1"
 	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    60
+	    DstBlock		    "Scope1"
+	    DstPort		    1
 	  }
 	}
       }
@@ -3567,23 +3566,6 @@ Model {
       Branch {
 	ZOrder			7
 	DstBlock		"To Workspace"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      8
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      Points		      [26, 0]
-      Branch {
-	ZOrder			54
-	Points			[0, -115]
-	DstBlock		"Subsystem"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			45
-	DstBlock		"To Workspace3"
 	DstPort			1
       }
     }
@@ -3704,10 +3686,35 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      76
+      ZOrder		      8
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [26, 0]
+      Branch {
+	ZOrder			54
+	Points			[0, -115]
+	DstBlock		"Subsystem"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			45
+	DstBlock		"To Workspace3"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      81
       SrcBlock		      "Guidance"
       SrcPort		      1
-      Points		      [160, 0; 0, -210]
+      Points		      [49, 0; 0, -100]
+      DstBlock		      "Subsystem"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      82
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [9, 0; 0, -95]
       DstBlock		      "Heading reference"
       DstPort		      1
     }
