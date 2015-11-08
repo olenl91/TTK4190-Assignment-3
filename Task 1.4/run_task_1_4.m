@@ -69,9 +69,9 @@ title('Nomato performance vs full system performance, improved performance')
 omega_n = 10*omega_d;
 
 %controller gains
-K_p = omega_n^2*T/K;
-K_d = (2*omega_n*T-1)/K;
-K_i = omega_n/10*K_p;
+K_p_heading = omega_n^2*T/K;
+K_d_heading = (2*omega_n*T-1)/K;
+K_i_heading = omega_n/10*K_p_heading;
 
 c=1; %current on
 sim MSFartoystyringTask14

@@ -17,9 +17,9 @@ omega_d = 0.008;
 omega_n = 10*omega_d;
 T = 59.13;
 K = -0.0252;
-K_p = omega_n^2*T/K;
-K_d = (2*omega_n*T-1)/K;
-K_i = omega_n/10*K_p;
+K_p_heading = omega_n^2*T/K;
+K_d_heading = (2*omega_n*T-1)/K;
+K_i_heading = omega_n/10*K_p_heading;
 
 %% Task 1.6
 %Finding d1 and d2
