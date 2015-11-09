@@ -107,7 +107,7 @@ zeta_speed = 1;
 omega_speed = 0.01;
 %Integral windup - anti-windup gains
 K_windup_heading = 1;
-K_windup_speed = 1;
+K_windup_speed = 2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -118,9 +118,7 @@ delta_guidance = 2*L; %Look-ahead distance
 
 %Guidance control gains
 K_p_guidance = 1/delta_guidance;
-K_i_guidance = 1/(250*(delta_guidance));
-
-%do some tuning...
+K_i_guidance = 0%1/(250*(delta_guidance));
 
 sim MSFartoystyringtask23
 
