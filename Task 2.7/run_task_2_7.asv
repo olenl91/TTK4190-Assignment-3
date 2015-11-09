@@ -4,7 +4,7 @@ clc
 
 %% Initializing
 tstart=0;      %Sim start time
-tstop=7000;    %Sim stop time
+tstop=2800;    %Sim stop time
 tsamp=10;      %Sampling time (NOT ODE solver time step)
 
 
@@ -15,7 +15,7 @@ psi0=0;        %Inital yaw angle
 r0=0;          %Inital yaw rate
 c=0;           %Current on (1)/off (0)
 
-global e_d U_t delta_s delta_e chi_t p_t kappa R_p s_d;
+global e_d U_t delta_s delta_e chi_t kappa;
 
 %% Loading waypoints
 load('WP.mat')
@@ -62,20 +62,14 @@ K_windup_speed = 1;
 
 L = 304.8; %length of ship (m)
 U_t = 3;
-e_d = 400;
-chi_t = 36.31*pi/180;
-p0_t = [4860;3880];
-p_t = p0_t;
-kappa = 4;
-delta_e = 2*L;
-delta_s = 500;
-R_p = [cos(chi_t)  -sin(chi_t); sin(chi_t) cos(chi_t)];
-s_d = 0;
+e_d = L;
+chi_t = 53.69;
 
-sim MSFartoystyringtask27
+sim MSFartoystyringtask26
 
 %Simulation results
-pathplotter(p(:,1), p(:,2), psi, tsamp, 10, tstart, tstop, 1, WP)
+pathplotter(p(:,1), p(:,2), psi, tsamp, 10, tstart, tstop, 0, WP)
+
 
 %Plotting
 %add plots for closed loop system
