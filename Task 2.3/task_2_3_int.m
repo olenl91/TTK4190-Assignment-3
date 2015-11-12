@@ -1,6 +1,5 @@
-%Part 2.1,2.2,2.3
+%Part 2.3 with integral action
 clear all
-clc
 
 %% Initializing
 tstart=0;      %Sim start time
@@ -22,61 +21,10 @@ global k WP_xpos WP_ypos R_k1;
 load('WP.mat')
 WP_xpos = WP(1,:);
 WP_ypos = WP(2,:);
-WP_time = [0 40 60 80 100]; %as in the example from p.269 in [1]
-
-%Finding ship turning radius
-sim MSFartoystyringtask21
-pathplotter(p(:,1),p(:,2),psi,tsamp,1000,tstart,tstop,0,zeros(2,tstop))
-title('Plot to find turning radius')
-turningRadius = 800; %m
-
-%Method 1 - Continous interpolation
-t = 0:1:max(WP_time);
-x_spline = spline(WP_time, WP_xpos,t); %Spline inter
-y_spline = spline(WP_time, WP_ypos,t);
-x_pchip = pchip(WP_time, WP_xpos,t); %Hermite inter
-y_pchip = pchip(WP_time, WP_ypos,t);
-
-%Method 2 - Piece-wise continous interpolation
-x_spline2 = spline(WP_time, WP_xpos);
-y_spline2 = spline(WP_time, WP_ypos);
-x_p = ppval(x_spline2, WP_time);
-y_p = ppval(y_spline2, WP_time);
-
-%Plotting method 1 +2 
-figure()
-plot(WP_ypos, WP_xpos,'o') %plot waypoints
-hold on;
-plot(y_p,x_p,'r') %plot method 2
-hold on;
-plot(y_spline,x_spline, 'g') %plot method 1 - spline
-hold on;
-plot(y_pchip,x_pchip, 'black') %plot method 1 - pchip
-hold on;
-axis([-6000 12000 -2000 16000])
-
-%Method 3 - Circles and straight lines - Dubins path
-line(WP_ypos,WP_xpos)
-for i = 2 : 4
-    lastWP = [WP(1,i-1); WP(2,i-1)];
-    currentWP = [WP(1,i); WP(2,i)]; %waypoints
-    nextWP = [WP(1,i+1); WP(2,i+1)];
-    u = (lastWP - currentWP)/(norm(lastWP-currentWP));
-    v = (nextWP - currentWP)/(norm(nextWP-currentWP)); %a,b,c
-    w = (u + v)/(norm(u + v));
-    a = acos((norm(v)^2 + norm(u+v)^2 - norm(u)^2)/(2*norm(v)*norm(u+v)));
-    R = turningRadius / sin(a);
-    circlePos = currentWP + (R * w);
-    viscircles([circlePos(2,1), circlePos(1,1)], turningRadius, 'LineWidth', 1);
-    hold on;
-end
-legend('Waypoints','Dubins path','Spline inter.','Cubic Hermite inter.','Piece-wise inter.');
-xlabel('y - East [m]');
-ylabel('x - North [m]');
-title('Task 2.1 - path generation plot')
 
 %% Task 2.3
 k = 0; %used to start at first waypoint in headingGuidance.m
+m_u = 6000;
 c=1; %current on
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,7 +45,6 @@ omega_heading = 0.05;
 %Forward speed model
 d_1 = -0.0634;
 d_2 = 1.0463;
-m_u = 6000;
 %Speed
 lambda = 0.23;
 K_p_speed = 2*lambda;
@@ -117,11 +64,14 @@ L = 304.8; %length of ship (m)
 R_k1 = 2*L; %Circle of acceptance
 delta_guidance = 2*L; %Look-ahead distance
 
-%Lookahead-based scheme simulation
-sim MSFartoystyringtask23
+%Saturating control law with integral action simulation
+%Guidance control gains
+K_p_guidance = 1/delta_guidance;
+K_i_guidance = 1/(250*(delta_guidance));
+sim MSFartoystyringtask23int
 %Simulation results
 pathplotter(p(:,1), p(:,2), psi, tsamp, 10, tstart, tstop, 0, WP)
-title('Lookahead-based scheme simulation')
+title('Saturating control with integral action simulation')
 
 %% Plotting closed loop behaviour
 figure()
@@ -131,7 +81,7 @@ plot([t(1),t(end)],[delta_c_max,delta_c_max],'--k',[t(1),t(end)],[-delta_c_max,-
 grid on
 xlabel('Time [s]')
 ylabel('Rudder Command Angle [rad]')
-title('Closed-Loop Behaviour of Heading Controller')
+title('Closed-Loop Behaviour of Heading Controller with integral action')
 legend('delta_c','delta_{sat}');
 
 figure()
@@ -139,7 +89,7 @@ plot(t,psi,t,psi_r,'black:',t,psi_d,'r--')
 grid on
 xlabel('Time [s]')
 ylabel('Heading [rad]')
-title('Closed-Loop Behaviour of Heading Controller')
+title('Closed-Loop Behaviour of Heading Controller with integral action')
 legend('psi','psi_r','psi_d');
 
 figure()
@@ -147,7 +97,7 @@ plot(t,r,t,r_d,'r--')
 grid on
 xlabel('Time [s]')
 ylabel('Heading rate [rad/s]')
-title('Closed-Loop Behaviour of Heading Controller')
+title('Closed-Loop Behaviour of Heading Controller with integral action')
 legend('r','r_d');
 
 figure()
@@ -155,7 +105,7 @@ plot(t,n_c,[t(1),t(end)],[n_c_max,n_c_max],'--k');
 grid on
 xlabel('Time [s]')
 ylabel('Shaft Command Speed [m/s]')
-title('Closed-Loop Behaviour of Speed Controller')
+title('Closed-Loop Behaviour of Speed Controller with integral action')
 legend('n_c','n_{max}');
 
 figure()
@@ -163,8 +113,5 @@ plot(t,v(:,1),t,u_r,'black:',t,u_d,'r--')
 grid on
 xlabel('Time [s]')
 ylabel('Forward Speed [m/s]')
-title('Closed-Loop Behaviour of Speed Controller')
+title('Closed-Loop Behaviour of Speed Controller with integral action')
 legend('u','u_r','u_d','Location','SouthEast');
-
-%% Saturating control law with integral action simulation
-task_2_3_int

@@ -1,8 +1,8 @@
-function [ guidance ] = headingGuidance( position )
+function [ guidance ] = headingGuidanceint( position )
 %Function that calculates X_p and e for a guidance system for ship heading
 %   Based on the theory from [1] chapter 10.3.2
 
-global k WP_xpos WP_ypos R_k1 K_p_guidance;
+global k WP_xpos WP_ypos R_k1;
 
 N = length(WP_ypos); %number of way points
 
@@ -20,10 +20,7 @@ yk1 = WP_ypos(k+1);
 x_p = atan2(yk1 - yk,xk1 - xk); %(10.64)
 e = - (position(1) - xk)*sin(x_p) + (position(2)- yk)*cos(x_p); %(10.59)
 
-K_p_guidance = 1/sqrt(R_k1^2-e^2);
-
-X_r = atan(-K_p_guidance*e);
-guidance = [x_p; X_r];
+guidance = [x_p; e];
     
 circle_of_acceptance = (xk1 - position(1))^2 + (yk1 - position(2))^2;
 if circle_of_acceptance <= R_k1^2 %go to next waypoint (10.86)

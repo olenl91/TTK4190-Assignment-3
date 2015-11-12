@@ -33,7 +33,7 @@ function pathplotter(x, y,  psi, tsamp, dec, tstart, tstop, track, WP)
 %You are free to modify the code as necessary.
 %
 %Bugs should be reported to the TA.
-close all
+%close all
 figure
 hold on
 psiTemp=atan2(WP(2,2)-WP(2,1),WP(1,2)-WP(1,1));
@@ -109,48 +109,48 @@ else
     for ii=1:length(alph)
         alph(ii) = atan2(WP(2,ii+1)-WP(2,ii), WP(1,ii+1)-WP(1,ii));
     end
-    tim=tstart:tsamp:tstop;
-    e = zeros(length(tim), 1);
-    s = zeros(length(tim), 1);
-%     e = zeros(length(tim), length(alph));
-%     s = zeros(length(tim), length(alph));
-    tmpE = zeros(size(alph));
-    tmpS = zeros(size(alph));
-    %mm = 0;
-    %mi = 1;
-    eps = 5;
-    mind = 1;
-    minds = zeros(size(tim));
-    for ii=1:length(tim)
-        for jj=1:length(tmpE)
-            tmpS(jj) = (x(ii)-WP(1,jj))*cos(alph(jj))+(y(ii)-WP(2,jj))*sin(alph(jj));
-            tmpS(jj) = sqrt((WP(1,jj)-WP(1,jj+1))^2+(WP(2,jj)-WP(2,jj+1))^2)-tmpS(jj);
-            tmpE(jj) = -(x(ii)-WP(1,jj))*sin(alph(jj))+(y(ii)-WP(2,jj))*cos(alph(jj));
-        end
-        %[mm mi] = min(abs(tmp(mii:(mii+1))));
-        %e(ii) = tmp(mi);
-        if(tmpS(mind)<eps)
-            mind = mind+1;
-        end
-        minds(ii) = mind;
-        e(ii) = tmpE(mind);
-        s(ii) = tmpS(mind);
-%         e(ii,:) = tmpE;
-%         s(ii,:) = tmpS;
-    end
-    
+%     tim=tstart:tsamp:tstop;
+%     e = zeros(length(tim), 1);
+%     s = zeros(length(tim), 1);
+% %     e = zeros(length(tim), length(alph));
+% %     s = zeros(length(tim), length(alph));
+%     tmpE = zeros(size(alph));
+%     tmpS = zeros(size(alph));
+%     %mm = 0;
+%     %mi = 1;
+%     eps = 5;
+%     mind = 1;
+%     minds = zeros(size(tim));
+%     for ii=1:length(tim)
+%         for jj=1:length(tmpE)
+%             tmpS(jj) = (x(ii)-WP(1,jj))*cos(alph(jj))+(y(ii)-WP(2,jj))*sin(alph(jj));
+%             tmpS(jj) = sqrt((WP(1,jj)-WP(1,jj+1))^2+(WP(2,jj)-WP(2,jj+1))^2)-tmpS(jj);
+%             tmpE(jj) = -(x(ii)-WP(1,jj))*sin(alph(jj))+(y(ii)-WP(2,jj))*cos(alph(jj));
+%         end
+%         %[mm mi] = min(abs(tmp(mii:(mii+1))));
+%         %e(ii) = tmp(mi);
+%         if(tmpS(mind)<eps)
+%             mind = mind+1;
+%         end
+%         minds(ii) = mind;
+%         e(ii) = tmpE(mind);
+%         s(ii) = tmpS(mind);
+% %         e(ii,:) = tmpE;
+% %         s(ii,:) = tmpS;
+%     end
+%     
+% %     figure
+% %     plot(tim, minds)
+%     
+% %     figure
+% %     plot(tim, s)
+% %     xlabel('time [s]')
+% %     ylabel('distance [m]')
+% %     title('Aling-track error')
+%     
 %     figure
-%     plot(tim, minds)
-    
-%     figure
-%     plot(tim, s)
+%     plot(tim, e)
 %     xlabel('time [s]')
 %     ylabel('distance [m]')
-%     title('Aling-track error')
-    
-    figure
-    plot(tim, e)
-    xlabel('time [s]')
-    ylabel('distance [m]')
-    title('Cross-track error')
+%     title('Cross-track error')
 end
