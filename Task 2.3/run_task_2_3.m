@@ -84,7 +84,6 @@ initcontrollers
 %Heading guidance parameters
 L = 304.8; %length of ship (m)
 R_k1 = 2*L; %Circle of acceptance
-delta_guidance = 2*L; %Look-ahead distance
 K_i_guidance = 1/300; %1/300*K_p_guidance
 
 %Lookahead-based steering with P-controller simulation

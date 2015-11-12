@@ -27,5 +27,3 @@ omega_speed = 0.01;
 %Integral windup - anti-windup gains
 K_windup_heading = 1;
 K_windup_speed = 2;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
