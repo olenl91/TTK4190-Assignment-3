@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.132"
+    ComputedModelVersion    "1.133"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [230.0, 135.0, 1382.0, 740.0]
+      Location		      [29.0, 45.0, 1382.0, 740.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -51,11 +51,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"236"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1332.0, 566.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[0.0, 54.700000000000045]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ONL"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 12 16:54:58 2015"
-  RTWModifiedTimeStamp	  369248097
-  ModelVersionFormat	  "1.%<AutoIncrement:132>"
+  LastModifiedDate	  "Thu Nov 12 18:01:09 2015"
+  RTWModifiedTimeStamp	  369251989
+  ModelVersionFormat	  "1.%<AutoIncrement:133>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -998,8 +998,8 @@ Model {
   }
   System {
     Name		    "MSFartoystyringtask26"
-    Location		    [230, 135, 1612, 875]
-    Open		    off
+    Location		    [29, 45, 1411, 785]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1012,7 +1012,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "293"
+    SIDHighWatermark	    "294"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -1040,7 +1040,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Guidance"
-	Location		[230, 135, 1612, 875]
+	Location		[29, 45, 1411, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1446,7 +1446,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Heading controller"
-	Location		[-8, -8, 1374, 736]
+	Location		[29, 45, 1411, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1930,7 +1930,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Heading reference"
-	Location		[-8, -8, 1374, 736]
+	Location		[29, 45, 1411, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2498,7 +2498,7 @@ Model {
       System {
 	Name			"Speed controller\n"
 	Location		[230, 135, 1612, 875]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3201,7 +3201,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Speed reference"
-	Location		[230, 135, 1612, 875]
+	Location		[29, 45, 1411, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3483,7 +3483,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Subsystem"
-	Location		[230, 135, 1612, 875]
+	Location		[29, 45, 1411, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3710,7 +3710,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Subsystem1"
-	Location		[230, 135, 1612, 875]
+	Location		[29, 45, 1411, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3877,6 +3877,16 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "u_d"
 	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "294"
+	  Name			  "v"
+	  Position		  [405, 189, 412, 219]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  on
+	  FixedWidth		  on
+	  HorizontalAlignment	  "left"
+	  VerticalAlignment	  "top"
 	}
       }
     }

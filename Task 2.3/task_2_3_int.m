@@ -38,6 +38,6 @@ int_on = 1; %integral action on
 sim MSFartoystyringtask23
 %Simulation results
 pathplotter(p(:,1), p(:,2), psi, tsamp, 10, tstart, tstop, 0, WP)
-title('Lookahead-based scheme simulation')
+title('Simulated path with PI-controller')
 %Plotting closed loop behaviour
 plots
