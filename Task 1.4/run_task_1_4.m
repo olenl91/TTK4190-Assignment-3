@@ -17,31 +17,16 @@ n_c = 7.3;
 delta_c = 0;
 
 %% Task 1.2
-delta_step = 12.5*pi/180; %12.5degrees delta_c step input
-sim MSFartoystyringtask12step
-
-delta_r = 0.632*(r(end)-r(1))+r(1);
-
-T = 59.13;
-
-%plotting step response
-figure(1)
-plot(t,r,T,delta_r,'or')
-grid on
-xlabel('Time [s]')
-ylabel('Yaw rate [rad]')
-legend('Step response','63.2% of \Deltar')
-title('Yaw Rate Step Response')
-
-K = (r(end)-r(1))/delta_step;
+T = 100;
+K = -0.0318;
 
 %testing nomoto performance
 omega_d = 0.008;
 amp = 0.3;
 sim NomotoModelTask12
-sim MSFartoystyringtask12sine
+sim MSFartoystyringtask12
 
-figure(2)
+figure()
 plot(t,r)
 hold on
 plot(t,nomotoresult,'r--')
@@ -49,21 +34,7 @@ grid on
 xlabel('Time [s]')
 ylabel('Yaw rate [rad]')
 legend('MS Fartøystyring','1st order Nomoto model')
-title('Nomato performance vs full system performance, original K')
-
-% %improved Nomoto performance
-K = 0.8*(r(end)-r(1))/delta_step;
-sim NomotoModelTask12
-
-figure(3)
-plot(t,r)
-hold on
-plot(t,nomotoresult,'r--')
-grid on
-xlabel('Time [s]')
-ylabel('Yaw rate [rad]')
-legend('MS Fartøystyring','1st order Nomoto model')
-title('Nomato performance vs full system performance, improved performance')
+title('Nomato performance vs full system performance')
 
 %% Task 1.4
 omega_n = 10*omega_d;
@@ -77,7 +48,7 @@ c=1; %current on
 sim MSFartoystyringTask14
 
 %plotting
-figure(4)
+figure()
 plot(t,psi_tilde)
 grid on
 xlabel('Time [s]')
@@ -85,7 +56,7 @@ ylabel('Heading error [rad]')
 legend('psi_{tilde}');
 title('Closed-Loop Behaviour of psi_{tilde}')
 
-figure(5)
+figure()
 plot(t,psi,t,psi_d,'--r')
 grid on
 xlabel('Time [s]')
@@ -93,7 +64,7 @@ ylabel('Heading [rad]')
 legend('psi','psi_d');
 title('Closed-Loop Behaviour of psi and psi_d')
 
-figure(6)
+figure()
 plot(t,r_tilde)
 grid on
 xlabel('Time [s]')
@@ -101,7 +72,7 @@ ylabel('Heading rate error [rad/s]')
 legend('r_{tilde}');
 title('Closed-Loop Behaviour of r_{tilde}')
 
-figure(7)
+figure()
 plot(t,r,t,r_d,'--r')
 grid on
 xlabel('Time [s]')
