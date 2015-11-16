@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.139"
+    ComputedModelVersion    "1.141"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -55,7 +55,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1332.0, 566.0]
 	ZoomFactor		[1.0]
-	Offset			[6.4999999999998863, 79.25]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ONL"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 12 18:43:49 2015"
-  RTWModifiedTimeStamp	  369254613
-  ModelVersionFormat	  "1.%<AutoIncrement:139>"
+  LastModifiedDate	  "Mon Nov 16 21:54:40 2015"
+  RTWModifiedTimeStamp	  369611670
+  ModelVersionFormat	  "1.%<AutoIncrement:141>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1559,7 +1559,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "K_windup_heading\n"
 	  SID			  "184"
-	  Position		  [625, 47, 725, 83]
+	  Position		  [640, 47, 695, 83]
 	  ZOrder		  16
 	  BlockMirror		  on
 	  Gain			  "K_windup_heading"
@@ -3445,7 +3445,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "X_d"
 	  SID			  "212"
-	  Position		  [450, 248, 480, 262]
+	  Position		  [890, 173, 920, 187]
 	  ZOrder		  47
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -3623,7 +3623,7 @@ Model {
 	  ZOrder		  15
 	  SrcBlock		  "X_d"
 	  SrcPort		  1
-	  Points		  [530, 0]
+	  Points		  [90, 0]
 	  DstBlock		  "Sum1"
 	  DstPort		  2
 	}

@@ -17,7 +17,6 @@ n_c = 7.3;
 delta_c = 0;
 
 %% Task 1.2
-
 %finding K and T for the nomoto model
 task_1_2
 
@@ -35,7 +34,7 @@ grid on
 xlabel('Time [s]')
 ylabel('Yaw rate [rad]')
 legend('MS Fartøystyring','1st order Nomoto model')
-title('Nomato performance vs full system performance')
+title('Nomoto performance vs full system performance')
 
 %% Task 1.4
 omega_n = 10*omega_d;
