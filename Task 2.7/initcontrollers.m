@@ -4,7 +4,7 @@
 T = 100;
 K = -0.0331;
 %Heading
-omega_n = 0.08;
+omega_n = 0.11;
 K_p_heading = omega_n^2*T/K;
 K_d_heading = (2*omega_n*T-1)/K;
 K_i_heading = omega_n/10*K_p_heading;

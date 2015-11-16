@@ -4,7 +4,7 @@ clc
 
 %% Initializing
 tstart=0;      %Sim start time
-tstop=6800;    %Sim stop time
+tstop=7500;    %Sim stop time
 tsamp=10;      %Sampling time (NOT ODE solver time step)
 
 p0=zeros(2,1); %Initial position (NED)
@@ -43,7 +43,7 @@ int_on = 0; %Integral action off
 
 %Speed guidance
 Kappa = u_max - U_t; %maximum approach speed
-delta_speed = 3000;
+delta_speed = 2000;
 desired_distance = 100; %m
 
 %Simulate

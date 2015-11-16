@@ -1,9 +1,9 @@
-function [ output ] = speedGuidance( shippos, target_pos, X_t )
+function [ output ] = speedGuidance( ship_pos, target_pos, X_t )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 global U_t Kappa delta_speed desired_distance;
 
-position_error = shippos - target_pos;
+position_error = ship_pos - target_pos;
 distance_error = sqrt(position_error' * position_error);
 
 s = [cos(X_t), sin(X_t)]*position_error + desired_distance; %lateral distance (10.10)
