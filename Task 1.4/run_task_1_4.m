@@ -17,14 +17,15 @@ n_c = 7.3;
 delta_c = 0;
 
 %% Task 1.2
-T = 100;
-K = -0.0318;
+
+%finding K and T for the nomoto model
+task_1_2
 
 %testing nomoto performance
 omega_d = 0.008;
 amp = 0.3;
 sim NomotoModelTask12
-sim MSFartoystyringtask12
+sim MSFartoystyringtask122
 
 figure()
 plot(t,r)

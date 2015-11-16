@@ -1,8 +1,8 @@
 %Initialize controllers
 
 %Nomoto model
-T = 74;
-K = -0.0272;
+T = 100;
+K = -0.0331;
 %Heading
 omega_n = 0.08;
 K_p_heading = omega_n^2*T/K;

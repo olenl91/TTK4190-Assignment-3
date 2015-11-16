@@ -15,8 +15,8 @@ c=0;           %Current on (1)/off (0)
 %Heading controller init
 omega_d = 0.008;
 omega_n = 10*omega_d;
-T = 59.13;
-K = -0.0252;
+T = 100;
+K = -0.0331;
 K_p_heading = omega_n^2*T/K;
 K_d_heading = (2*omega_n*T-1)/K;
 K_i_heading = omega_n/10*K_p_heading;

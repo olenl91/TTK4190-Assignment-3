@@ -17,12 +17,12 @@ x = lsqcurvefit(F,x0, t', r');
 T = x(1);
 
 figure(); hold on;
-title('Speed plot over simulation time')
+title('Simulated speed')
 plot(t, sqrt(v(:,1).^2 + v(:,2).^2)); % plots speed against time to see when they reach terminal
 xlabel('Time [s]')
 ylabel('Velocity [m/s]')
 figure(); hold on;
-title('yaw rate over simulation time compared to nomoto model')
+title('Full system vs Nomoto yaw rate')
 xlabel('Time [s]')
 ylabel('Yaw rate [rad/s]')
 plot(t, r); % plot yaw rate to see when it reach terminal rate
