@@ -4,18 +4,17 @@ clc
 
 %% Initializing
 tstart=0;      %Sim start time
-tstop=7000;    %Sim stop time
+tstop=6800;    %Sim stop time
 tsamp=10;      %Sampling time (NOT ODE solver time step)
-
 
 p0=zeros(2,1); %Initial position (NED)
 u_r_0 = 6.63;
-v0=[u_r_0 0]';  %Initial velocity (body)
+v0=[u_r_0 0]'; %Initial velocity (body)
 psi0=0;        %Inital yaw angle
 r0=0;          %Inital yaw rate
 c=0;           %Current on (1)/off (0)
 
-global k WP_xpos WP_ypos R_k1 U_t u_max Kappa delta_speed;
+global k WP_xpos WP_ypos R_k1 U_t u_max Kappa delta_speed desired_distance;
 
 %% Loading waypoints
 load('WP.mat')
@@ -44,10 +43,12 @@ int_on = 0; %Integral action off
 
 %Speed guidance
 Kappa = u_max - U_t; %maximum approach speed
-delta_speed = 1500;
+delta_speed = 3000;
+desired_distance = 100; %m
 
-%Sim
+%Simulate
 sim MSFartoystyringtask27
 
 %Simulation results
 pathplotter(p(:,1), p(:,2), psi, tsamp, 10, tstart, tstop, 1, WP)
+plots

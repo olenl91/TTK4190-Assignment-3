@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.139"
+    ComputedModelVersion    "1.142"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1800.0, -303.0, 1122.0, 867.0]
+      Location		      [361.0, 168.0, 1122.0, 760.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -51,11 +51,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1072.0, 693.0]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"275"
+	Extents			[1072.0, 586.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 76.0]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ONL"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 16 12:55:55 2015"
-  RTWModifiedTimeStamp	  369578869
-  ModelVersionFormat	  "1.%<AutoIncrement:139>"
+  LastModifiedDate	  "Mon Nov 16 17:44:02 2015"
+  RTWModifiedTimeStamp	  369596639
+  ModelVersionFormat	  "1.%<AutoIncrement:142>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1018,8 +1018,8 @@ Model {
   }
   System {
     Name		    "MSFartoystyringtask27"
-    Location		    [1800, -303, 2922, 564]
-    Open		    on
+    Location		    [361, 168, 1483, 928]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1032,7 +1032,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "350"
+    SIDHighWatermark	    "352"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -1060,8 +1060,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Guidance"
-	Location		[1944, -306, 3066, 561]
-	Open			off
+	Location		[361, 168, 1483, 928]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1083,15 +1083,15 @@ Model {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Seading guidance"
+	  Name			  "Heading guidance"
 	  SID			  "300"
 	  Ports			  [1, 2]
-	  Position		  [180, 152, 280, 218]
+	  Position		  [180, 149, 280, 216]
 	  ZOrder		  90
 	  RequestExecContextInheritance	off
 	  System {
-	    Name		    "Seading guidance"
-	    Location		    [1957, -271, 3079, 580]
+	    Name		    "Heading guidance"
+	    Location		    [361, 168, 1483, 928]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1491,7 +1491,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Speed guidance"
-	    Location		    [1944, -306, 3066, 561]
+	    Location		    [361, 168, 1483, 928]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1817,6 +1817,7 @@ Model {
 	      FixedWidth	      off
 	      HorizontalAlignment     "left"
 	      VerticalAlignment	      "top"
+	      ZOrder		      -1
 	    }
 	  }
 	}
@@ -1825,7 +1826,7 @@ Model {
 	  Name			  "To Workspace1"
 	  SID			  "305"
 	  Ports			  [1]
-	  Position		  [880, 125, 940, 155]
+	  Position		  [880, 120, 940, 150]
 	  ZOrder		  143
 	  ShowName		  off
 	  VariableName		  "X_d"
@@ -1837,7 +1838,7 @@ Model {
 	  Name			  "To Workspace2"
 	  SID			  "331"
 	  Ports			  [1]
-	  Position		  [880, 265, 940, 295]
+	  Position		  [865, 235, 925, 265]
 	  ZOrder		  145
 	  ShowName		  off
 	  VariableName		  "U_d"
@@ -1860,7 +1861,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "X_d"
 	  SID			  "292"
-	  Position		  [895, 163, 925, 177]
+	  Position		  [895, 158, 925, 172]
 	  ZOrder		  43
 	  IconDisplay		  "Port number"
 	}
@@ -1877,7 +1878,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "U_d"
 	  SID			  "293"
-	  Position		  [895, 308, 925, 322]
+	  Position		  [895, 288, 925, 302]
 	  ZOrder		  44
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1886,59 +1887,59 @@ Model {
 	  ZOrder		  27
 	  SrcBlock		  "p"
 	  SrcPort		  1
-	  Points		  [33, 0]
+	  Points		  [38, 0]
 	  Branch {
-	    ZOrder		    35
-	    Points		    [0, 80]
-	    DstBlock		    "Speed guidance"
+	    ZOrder		    50
+	    DstBlock		    "Heading guidance"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    34
-	    DstBlock		    "Seading guidance"
+	    ZOrder		    49
+	    Points		    [0, 80]
+	    DstBlock		    "Speed guidance"
 	    DstPort		    1
 	  }
 	}
 	Line {
 	  ZOrder		  28
-	  SrcBlock		  "Seading guidance"
+	  SrcBlock		  "Heading guidance"
 	  SrcPort		  1
 	  Points		  [573, 0]
+	  Branch {
+	    ZOrder		    48
+	    DstBlock		    "X_d"
+	    DstPort		    1
+	  }
 	  Branch {
 	    ZOrder		    31
 	    Points		    [0, -30]
 	    DstBlock		    "To Workspace1"
 	    DstPort		    1
 	  }
-	  Branch {
-	    ZOrder		    30
-	    DstBlock		    "X_d"
-	    DstPort		    1
-	  }
 	}
 	Line {
 	  ZOrder		  29
-	  SrcBlock		  "Seading guidance"
+	  SrcBlock		  "Heading guidance"
 	  SrcPort		  2
-	  Points		  [29, 0]
+	  Points		  [40, 0]
 	  Branch {
-	    ZOrder		    37
+	    ZOrder		    55
 	    Points		    [0, 120]
 	    DstBlock		    "Speed guidance"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    36
-	    Points		    [532, 0]
+	    ZOrder		    52
+	    Points		    [521, 0]
+	    Branch {
+	      ZOrder		      54
+	      DstBlock		      "X_t\n"
+	      DstPort		      1
+	    }
 	    Branch {
 	      ZOrder		      33
 	      Points		      [0, -95]
 	      DstBlock		      "To Workspace9"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      32
-	      DstBlock		      "X_t\n"
 	      DstPort		      1
 	    }
 	  }
@@ -1950,13 +1951,12 @@ Model {
 	  Points		  [274, 0]
 	  Branch {
 	    ZOrder		    41
-	    Points		    [0, 20]
 	    DstBlock		    "U_d"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    40
-	    Points		    [0, -15]
+	    Points		    [0, -45]
 	    DstBlock		    "To Workspace2"
 	    DstPort		    1
 	  }
@@ -4505,6 +4505,30 @@ Model {
     }
     Block {
       BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "351"
+      Ports		      [1]
+      Position		      [210, 295, 270, 325]
+      ZOrder		      54
+      ShowName		      off
+      VariableName	      "delta_c"
+      MaxDataPoints	      "inf"
+      SampleTime	      "tsamp"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      SID		      "352"
+      Ports		      [1]
+      Position		      [205, 450, 265, 480]
+      ZOrder		      55
+      ShowName		      off
+      VariableName	      "n_c"
+      MaxDataPoints	      "inf"
+      SampleTime	      "tsamp"
+    }
+    Block {
+      BlockType		      ToWorkspace
       Name		      "To Workspace3"
       SID		      "70"
       Ports		      [1]
@@ -4627,9 +4651,18 @@ Model {
       ZOrder		      13
       SrcBlock		      "Heading controller"
       SrcPort		      1
-      Points		      [-49, 0; 0, 120]
-      DstBlock		      "MS Fartoystyring"
-      DstPort		      1
+      Points		      [-160, 0; 0, 120; 45, 0]
+      Branch {
+	ZOrder			81
+	Points			[0, -40]
+	DstBlock		"To Workspace1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			80
+	DstBlock		"MS Fartoystyring"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      14
@@ -4665,9 +4698,18 @@ Model {
       ZOrder		      19
       SrcBlock		      "Fcn"
       SrcPort		      1
-      Points		      [-21, 0; 0, -130]
-      DstBlock		      "MS Fartoystyring"
-      DstPort		      2
+      Points		      [-21, 0; 0, -130; 40, 0]
+      Branch {
+	ZOrder			83
+	Points			[0, 50]
+	DstBlock		"To Workspace2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			82
+	DstBlock		"MS Fartoystyring"
+	DstPort			2
+      }
     }
     Line {
       ZOrder		      37
