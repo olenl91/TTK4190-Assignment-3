@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.147"
+    ComputedModelVersion    "1.148"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -51,7 +51,7 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "275"
 	  Extents		  [1072.0, 583.0]
@@ -60,12 +60,12 @@ Model {
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "216"
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
 	  Extents		  [1072.0, 583.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  ZoomFactor		  [0.8]
+	  Offset		  [-94.5, -36.499999999999972]
 	}
 	PropName		"EditorsInfo"
       }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ONL"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 16 21:53:54 2015"
-  RTWModifiedTimeStamp	  369611633
-  ModelVersionFormat	  "1.%<AutoIncrement:147>"
+  LastModifiedDate	  "Tue Nov 17 17:13:00 2015"
+  RTWModifiedTimeStamp	  369681176
+  ModelVersionFormat	  "1.%<AutoIncrement:148>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1011,7 +1011,7 @@ Model {
   System {
     Name		    "MSFartoystyringtask27"
     Location		    [361, 168, 1483, 928]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1022,7 +1022,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "352"
     Block {
@@ -1525,7 +1525,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant1"
 	      SID		      "347"
-	      Position		      [185, 250, 240, 280]
+	      Position		      [185, 230, 240, 260]
 	      ZOrder		      155
 	      Value		      "startpos_y"
 	    }
@@ -1966,7 +1966,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Heading controller"
-	Location		[-8, -8, 1374, 736]
+	Location		[361, 168, 1483, 928]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3700,7 +3700,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Speed reference"
-	Location		[-8, -8, 1374, 736]
+	Location		[361, 168, 1483, 928]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4212,7 +4212,7 @@ Model {
       System {
 	Name			"Subsystem1"
 	Location		[361, 168, 1483, 928]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"

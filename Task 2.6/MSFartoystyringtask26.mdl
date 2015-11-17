@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.141"
+    ComputedModelVersion    "1.142"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -51,8 +51,8 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"216"
 	Extents			[1332.0, 566.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ONL"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 16 21:54:40 2015"
-  RTWModifiedTimeStamp	  369611670
-  ModelVersionFormat	  "1.%<AutoIncrement:141>"
+  LastModifiedDate	  "Tue Nov 17 17:15:00 2015"
+  RTWModifiedTimeStamp	  369681287
+  ModelVersionFormat	  "1.%<AutoIncrement:142>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -999,7 +999,7 @@ Model {
   System {
     Name		    "MSFartoystyringtask26"
     Location		    [29, 45, 1411, 785]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1012,7 +1012,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "312"
+    SIDHighWatermark	    "313"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -3647,7 +3647,7 @@ Model {
       System {
 	Name			"Subsystem1"
 	Location		[29, 45, 1411, 785]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"

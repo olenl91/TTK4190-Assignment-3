@@ -1,4 +1,4 @@
-% Heading autopilot
+%Task 1.1, 1.2, 1.3, 1.4 - Heading Autopilot
 clear all
 clc
 

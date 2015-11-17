@@ -1,4 +1,4 @@
-%Part 2.1,2.2,2.3
+%Task 2.1, 2.2, 2.3 - Path Generation & Path Following
 clear all
 clc
 
@@ -58,7 +58,7 @@ axis([-6000 12000 -2000 16000])
 line(WP_ypos,WP_xpos)
 for i = 2 : 4
     lastWP = [WP(1,i-1); WP(2,i-1)];
-    currentWP = [WP(1,i); WP(2,i)]; %waypoints
+    currentWP = [WP(1,i); WP(2,i)]; %way points
     nextWP = [WP(1,i+1); WP(2,i+1)];
     u = (lastWP - currentWP)/(norm(lastWP-currentWP));
     v = (nextWP - currentWP)/(norm(nextWP-currentWP)); %a,b,c
@@ -97,3 +97,5 @@ plots
 
 %Lookahead-based steering with PI-controller simulation
 task_2_3_int
+%Plotting closed loop behaviour
+plots_int
